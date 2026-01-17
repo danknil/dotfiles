@@ -1,0 +1,19 @@
+{
+  "icon_theme": "Material Icon Theme",
+  "session": {
+    "trust_all_worktrees": false,
+  },
+  "vim_mode": true,
+  "base_keymap": "JetBrains",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "buffer_font_features": {
+    // Disable ligatures:
+    "calt": false,
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Rosé Pine",
+  },
+}
