@@ -1,4 +1,8 @@
-.PHONY: hypr pc install
+.PHONY: hypr pc nvim install
+
+nvim:
+	tuckr rm nvim
+	tuckr a -f nvim
 
 hypr:
 	tuckr rm hypr
