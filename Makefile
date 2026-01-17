@@ -3,9 +3,12 @@
 hypr:
 	tuckr rm hypr
 	tuckr a -f hypr
+	hyprctl reload
+
 pc:
 	tuckr rm pc
 	tuckr a -f pc
+	hyprctl reload
 
 install:
 	# breaking dependency loop
