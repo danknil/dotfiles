@@ -1,4 +1,4 @@
-.PHONY: hypr pc nvim install
+.PHONY: hypr pc nvim laptop install
 
 nvim:
 	tuckr rm nvim
@@ -9,27 +9,49 @@ hypr:
 	tuckr a -f hypr
 	hyprctl reload
 
-pc:
+pc: hypr nvim
 	tuckr rm pc
 	tuckr a -f pc
 	hyprctl reload
 
+laptop: hypr nvim
+        tuckr rm laptop
+        tuckr a -f laptop
+        hyprctl reload
+
 install:
 	# breaking dependency loop
-	sudo pacman -R hyprland
+	sudo pacman -R --noconfirm hyprland
 
-	paru -Syyuu hyprland-git \
-                hyprwire-git \
-                xdg-desktop-portal-hyprland-git \
-                hyprlock-git \
-                hyprpicker-git \
-                hyprpaper-git \
-                hypridle-git \
-                hyprland-qt-support-git \
-                hyprpolkitagent-git \
-                hyprsunset-git \
-                rose-pine-hyprcursor \
-                neovim-git \
+        sudo pacman -Syyuu --noconfirm \
                 zed \
-                rofi \
                 ghostty \
+                uwsm \
+                xdg-desktop-portal-kde \
+                xdg-desktop-portal-gtk \
+                dolphin \
+
+	paru -Sa \
+                hyprcursor-git \
+                hyprgraphics-git \
+                hypridle-git \
+                hyprland-git \
+                hyprland-guiutils-git \
+                hyprland-protocols-git \
+                hyprland-qt-support-git \
+                aquamarine-git \
+                hyprlang-git \
+                hyprlock-git \
+                hyprpaper-git \
+                hyprpicker-git \
+                hyprpolkitagent-git \
+                hyprshutdown-git \
+                hyprsunset-git \
+                hyprtoolkit-git \
+                hyprutils-git \
+                hyprwayland-scanner-git \
+                hyprwire-git \
+                rose-pine-hyprcursor \
+                xdg-desktop-portal-hyprland-git \
+                neovim-git \
+                runapp \
