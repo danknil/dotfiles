@@ -1,28 +1,21 @@
-.PHONY: hypr pc nvim laptop install
-
-nvim:
-	tuckr rm nvim
-	tuckr a -f --only-files nvim
+.PHONY: hypr pc laptop install
 
 hypr:
-	tuckr rm hypr
-	tuckr a -f --only-files hypr
+	stow -Svt $HOME hypr
 	hyprctl reload
 
-pc: hypr nvim
-	tuckr rm pc
-	tuckr a -f --only-files pc
+pc: hypr
+	stow -Svt $HOME pc
 	hyprctl reload
 
-laptop: hypr nvim
-        tuckr rm laptop
-        tuckr a -f --only-files laptop
-        hyprctl reload
+laptop: hypr
+	stow -Svt $HOME laptop
+	hyprctl reload
 
 install:
 	# breaking dependency loop
 	sudo pacman -R --noconfirm hyprland
-    sudo pacman -Syyuu --noconfirm \
+	sudo pacman -Syyuu --noconfirm \
 	            zed \
 	            ghostty \
 	            uwsm \
