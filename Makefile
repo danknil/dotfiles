@@ -1,15 +1,15 @@
 .PHONY: hypr pc laptop install
 
 hypr:
-	stow -Svt $HOME hypr
+	stow -Svt $(HOME) hypr
 	hyprctl reload
 
 pc: hypr
-	stow -Svt $HOME pc
+	stow -Svt $(HOME) pc
 	hyprctl reload
 
 laptop: hypr
-	stow -Svt $HOME laptop
+	stow -Svt $(HOME) laptop
 	hyprctl reload
 
 install:
