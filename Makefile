@@ -1,6 +1,6 @@
-.PHONY: hypr pc laptop install
+.PHONY: hypr pc laptop
 
-hypr:
+hypr: .install.lock
 	stow -Svt $(HOME) hypr
 	hyprctl reload
 
@@ -12,7 +12,7 @@ laptop: hypr
 	stow -Svt $(HOME) laptop
 	hyprctl reload
 
-install:
+.install.lock:
 	# breaking dependency loop
 	sudo pacman -R --noconfirm hyprland
 	sudo pacman -Syyuu --noconfirm \
@@ -45,3 +45,4 @@ install:
                 xdg-desktop-portal-hyprland-git \
                 neovim-git \
                 runapp \
+    touch .install.lock
