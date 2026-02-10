@@ -13,15 +13,14 @@ laptop: hypr
 	hyprctl reload
 
 .install.lock:
-	# breaking dependency loop
-	sudo pacman -R --noconfirm hyprland
+	sudo pacman -R --noconfirm hyprland || true
 	sudo pacman -Syyuu --noconfirm \
 	            zed \
 	            ghostty \
 	            uwsm \
 	            xdg-desktop-portal-kde \
 	            xdg-desktop-portal-gtk \
-	            dolphin \
+	            dolphin
 	paru -Sa \
                 hyprcursor-git \
                 hyprgraphics-git \
@@ -44,8 +43,7 @@ laptop: hypr
                 rose-pine-hyprcursor \
                 xdg-desktop-portal-hyprland-git \
                 neovim-git \
-                runapp \
-    # enable services
+                runapp
 	systemctl --user --now enable hyprsunset.service
 	systemctl --user --now enable hyprpaper.service
 	systemctl --user --now enable hyprpolkitagent.service
