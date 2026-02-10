@@ -1,4 +1,9 @@
 font-family = SauceCodePro Nerd Font
 font-feature = -calt, -liga, -dlig
 font-size = 16
+window-decoration = none
+window-theme = ghostty
 theme = Rose Pine
+linux-cgroup = always
+gtk-toolbar-style = flat
+gtk-wide-tabs = true
