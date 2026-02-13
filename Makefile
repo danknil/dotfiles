@@ -15,13 +15,13 @@ laptop: hypr
 .install.lock:
 	sudo pacman -R --noconfirm hyprland || true
 	sudo pacman -Syyuu --noconfirm \
-	            zed \
-	            ghostty \
-	            uwsm \
-	            xdg-desktop-portal-kde \
-	            xdg-desktop-portal-gtk \
-	            dolphin
-	paru -Sa \
+                zed \
+                ghostty \
+                uwsm \
+                xdg-desktop-portal-kde \
+                xdg-desktop-portal-gtk \
+                dolphin
+	paru -Sa --noconfirm \
                 hyprcursor-git \
                 hyprgraphics-git \
                 hypridle-git \
