@@ -1,4 +1,4 @@
-.PHONY: hypr pc laptop
+.PHONY: hypr pc laptop install
 
 hypr: .install.lock
 	stow -Svt $(HOME) hypr
@@ -12,7 +12,11 @@ laptop: hypr
 	stow -Svt $(HOME) laptop
 	hyprctl reload
 
-.install.lock:
+
+.install.lock: install
+	touch .install.lock
+
+install:
 	sudo pacman -R --noconfirm hyprland || true
 	sudo pacman -Syyuu --noconfirm \
 	            zed \
@@ -47,4 +51,3 @@ laptop: hypr
 	systemctl --user --now enable hyprsunset.service
 	systemctl --user --now enable hyprpaper.service
 	systemctl --user --now enable hyprpolkitagent.service
-	touch .install.lock
