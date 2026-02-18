@@ -27,7 +27,7 @@ install:
                 xdg-desktop-portal-kde \
                 xdg-desktop-portal-gtk \
                 dolphin
-	paru -Sa --noconfirm \
+	yes | paru -Sa \
                 hyprcursor-git \
                 hyprgraphics-git \
                 hypridle-git \
