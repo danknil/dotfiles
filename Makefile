@@ -26,7 +26,8 @@ install:
                 uwsm \
                 xdg-desktop-portal-kde \
                 xdg-desktop-portal-gtk \
-                dolphin
+                dolphin \
+                quickshell
 	yes | paru -Sa \
                 hyprcursor-git \
                 hyprgraphics-git \
