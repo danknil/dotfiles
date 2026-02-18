@@ -14,6 +14,9 @@ laptop: hypr
 
 
 .install.lock: install
+	systemctl --user --now enable hyprsunset.service
+	systemctl --user --now enable hyprpaper.service
+	systemctl --user --now enable hyprpolkitagent.service
 	touch .install.lock
 
 install:
@@ -47,6 +50,3 @@ install:
                 xdg-desktop-portal-hyprland-git \
                 neovim-git \
                 runapp
-	systemctl --user --now enable hyprsunset.service
-	systemctl --user --now enable hyprpaper.service
-	systemctl --user --now enable hyprpolkitagent.service
