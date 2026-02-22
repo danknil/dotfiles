@@ -14,18 +14,21 @@ laptop: hypr
 
 
 .install.lock: install
+	systemctl --user --now enable hyprsunset.service
+	systemctl --user --now enable hyprpaper.service
+	systemctl --user --now enable hyprpolkitagent.service
 	touch .install.lock
 
 install:
 	sudo pacman -R --noconfirm hyprland || true
 	sudo pacman -Syyuu --noconfirm \
-                zed \
                 ghostty \
                 uwsm \
                 xdg-desktop-portal-kde \
                 xdg-desktop-portal-gtk \
-                dolphin
-	paru -Sa --noconfirm \
+                dolphin \
+                quickshell
+	yes | paru -Sa \
                 hyprcursor-git \
                 hyprgraphics-git \
                 hypridle-git \
@@ -48,6 +51,3 @@ install:
                 xdg-desktop-portal-hyprland-git \
                 neovim-git \
                 runapp
-	systemctl --user --now enable hyprsunset.service
-	systemctl --user --now enable hyprpaper.service
-	systemctl --user --now enable hyprpolkitagent.service
