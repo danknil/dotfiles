@@ -21,7 +21,7 @@ laptop: hypr
 
 install:
 	sudo pacman -R --noconfirm hyprland || true
-	sudo pacman -Syyuu --noconfirm \
+	sudo pacman -Syu --noconfirm \
                 ghostty \
                 uwsm \
                 xdg-desktop-portal-kde \
