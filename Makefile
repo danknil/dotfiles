@@ -13,13 +13,7 @@ laptop: hypr
 	hyprctl reload
 
 
-.install.lock: install
-	systemctl --user --now enable hyprsunset.service
-	systemctl --user --now enable hyprpaper.service
-	systemctl --user --now enable hyprpolkitagent.service
-	touch .install.lock
-
-install:
+.install.lock:
 	sudo pacman -R --noconfirm hyprland || true
 	sudo pacman -Syu --noconfirm \
                 ghostty \
@@ -51,3 +45,7 @@ install:
                 xdg-desktop-portal-hyprland-git \
                 neovim-git \
                 runapp
+	systemctl --user --now enable hyprsunset.service
+	systemctl --user --now enable hyprpaper.service
+	systemctl --user --now enable hyprpolkitagent.service
+	touch .install.lock
