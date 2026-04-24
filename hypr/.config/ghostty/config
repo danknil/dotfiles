@@ -7,3 +7,4 @@ theme = Rose Pine
 linux-cgroup = always
 gtk-toolbar-style = flat
 gtk-wide-tabs = true
+shell-integration-features = ssh-env
