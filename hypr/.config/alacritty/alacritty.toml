@@ -1,0 +1,17 @@
+[general]
+import = [ "theme.toml" ]
+
+[window]
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+
+[font]
+normal = { family = "SauceCodePro Nerd Font", style = "Regular" }
+size = 14
+
+[cursor]
+style = { shape = "Underline", blinking = "Off" }
+thickness = 0.225
+
+[mouse]
+hide_when_typing = true

@@ -5,8 +5,7 @@ end
 local M = {}
 
 M.apps = {
-    -- FIXME change to foot
-    terminal = wrapProgram 'foot',
+    terminal = wrapProgram 'alacritty',
     fileManager = wrapProgram 'pcmanfm-qt',
     menu = wrapProgram 'rofi -show drun',
 }
