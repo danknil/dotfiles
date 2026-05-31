@@ -31,3 +31,11 @@ hl.window_rule {
 
     no_focus = true,
 }
+
+local games = {
+    'quake3e-vulkan.x64',
+    'quake3e.x64',
+}
+for i, game in ipairs(games) do
+    hl.window_rule { match = { class = game }, render_unfocused = true }
+end
